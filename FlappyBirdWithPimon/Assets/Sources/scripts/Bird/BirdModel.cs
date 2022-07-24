@@ -7,23 +7,28 @@ using UnityEngine;
 public class BirdModel : MonoBehaviour
 {
     private BirdController _birdController;
-    private float _score;
+    private int _score;
 
     private void Start()
     {
         _birdController = GetComponent<BirdController>();
     }
 
+    public void IncreaseScore()
+    {
+        _score++;
+    }
+
     private void ResetPlayer()
     {
         _score = 0;
         _birdController.ResetBird();
-        Die();
     }
 
-    private void Die()
+    public void Die()
     {
         Debug.Log("Вы умерли");
-        Time.timeScale = 0;
+    //    Time.timeScale = 0;
+        ResetPlayer();
     }
 }
