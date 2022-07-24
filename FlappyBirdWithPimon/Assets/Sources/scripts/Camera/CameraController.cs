@@ -17,6 +17,6 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         transform.position = new Vector3(_bird.transform.position.x - _xOffSet,
-            _bird.transform.position.y, transform.position.z);
+            transform.position.y, transform.position.z);
     }
 }
