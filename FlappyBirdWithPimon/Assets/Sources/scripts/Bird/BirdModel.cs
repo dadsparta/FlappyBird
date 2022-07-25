@@ -1,13 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
- [RequireComponent(typeof(BirdController))]
+[RequireComponent(typeof(BirdController))]
 public class BirdModel : MonoBehaviour
 {
+    [SerializeField] private TMP_Text _counter;
+    
     private BirdController _birdController;
     private int _score;
+    
 
     private void Start()
     {
@@ -17,6 +22,7 @@ public class BirdModel : MonoBehaviour
     public void IncreaseScore()
     {
         _score++;
+        _counter.text = _score.ToString();
     }
 
     private void ResetPlayer()
@@ -28,7 +34,7 @@ public class BirdModel : MonoBehaviour
     public void Die()
     {
         Debug.Log("Вы умерли");
-    //    Time.timeScale = 0;
+        SceneManager.LoadScene(0); 
         ResetPlayer();
     }
 }

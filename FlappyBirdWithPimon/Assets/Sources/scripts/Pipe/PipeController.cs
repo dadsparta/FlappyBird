@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 public class PipeController : MonoBehaviour
 
@@ -42,7 +43,7 @@ public class PipeController : MonoBehaviour
 
     protected void DisableObjectsAbroadScreen()
     {
-        Vector3 disablePoint = _camera.ViewportToWorldPoint(new Vector3(0,-0.5f));
+        Vector3 disablePoint = _camera.ViewportToWorldPoint(new Vector3(-0.5f,-0.5f));
         
         foreach (var item in _pool)
         {
@@ -65,7 +66,7 @@ public class PipeController : MonoBehaviour
                 if (i!=j)
                 {
                     if (_pool[i].transform.position.x == _pool[j].transform.position.x)
-                        _pool[j].SetActive(false);
+                        _pool[j].IsDestroyed();
                 }
             }
         }

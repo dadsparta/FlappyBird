@@ -36,7 +36,7 @@ public class BirdController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
         {
             _rigidbody2D.velocity = new Vector2(_speed,0);
             transform.rotation = _maxQuaternion;
