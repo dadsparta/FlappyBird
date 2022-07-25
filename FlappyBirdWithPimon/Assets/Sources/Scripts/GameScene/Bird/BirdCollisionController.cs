@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sources.Scripts.GameScene.Bird;
 using UnityEngine;
 
 [RequireComponent(typeof(BirdModel))]
