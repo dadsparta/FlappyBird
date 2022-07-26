@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -1829,7 +1829,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mobile - Flappy Bird - Version 12 Sprites_55: -349267421
       Mobile - Flappy Bird - Version 12 Sprites_17: 600565624
       Mobile - Flappy Bird - Version 12 Sprites_13: 1211565258
       Mobile - Flappy Bird - Version 12 Sprites_64: 2109778185
@@ -1857,22 +1856,22 @@ TextureImporter:
       Mobile - Flappy Bird - Version 12 Sprites_27: -1003400525
       Mobile - Flappy Bird - Version 12 Sprites_54: -1860572144
       Mobile - Flappy Bird - Version 12 Sprites_66: 1964209367
+      Mobile - Flappy Bird - Version 12 Sprites_80: 1533466007
       Mobile - Flappy Bird - Version 12 Sprites_75: -275739470
       Mobile - Flappy Bird - Version 12 Sprites_78: -15825668
-      Mobile - Flappy Bird - Version 12 Sprites_61: -520631558
-      Mobile - Flappy Bird - Version 12 Sprites_1: 1246450798
       Mobile - Flappy Bird - Version 12 Sprites_19: 1727231880
+      Mobile - Flappy Bird - Version 12 Sprites_44: 20750614
       Mobile - Flappy Bird - Version 12 Sprites_32: 148818709
       Mobile - Flappy Bird - Version 12 Sprites_60: -948884715
-      Mobile - Flappy Bird - Version 12 Sprites_44: 20750614
+      Mobile - Flappy Bird - Version 12 Sprites_52: 1656293025
       Mobile - Flappy Bird - Version 12 Sprites_10: -1766867912
       Mobile - Flappy Bird - Version 12 Sprites_12: -766124746
       Mobile - Flappy Bird - Version 12 Sprites_26: -1157241044
       Mobile - Flappy Bird - Version 12 Sprites_46: 583057607
       Mobile - Flappy Bird - Version 12 Sprites_41: 1095357081
-      Mobile - Flappy Bird - Version 12 Sprites_52: 1656293025
-      Mobile - Flappy Bird - Version 12 Sprites_80: 1533466007
+      Mobile - Flappy Bird - Version 12 Sprites_1: 1246450798
       Mobile - Flappy Bird - Version 12 Sprites_77: 1085982700
+      Mobile - Flappy Bird - Version 12 Sprites_61: -520631558
       Mobile - Flappy Bird - Version 12 Sprites_34: 1882934064
       Mobile - Flappy Bird - Version 12 Sprites_63: 1585845211
       Mobile - Flappy Bird - Version 12 Sprites_23: 945391897
@@ -1883,10 +1882,11 @@ TextureImporter:
       Mobile - Flappy Bird - Version 12 Sprites_48: -75861590
       Mobile - Flappy Bird - Version 12 Sprites_49: -851107716
       Mobile - Flappy Bird - Version 12 Sprites_50: 439179877
+      Mobile - Flappy Bird - Version 12 Sprites_55: -349267421
       Mobile - Flappy Bird - Version 12 Sprites_20: -1765828066
       Mobile - Flappy Bird - Version 12 Sprites_33: 334549971
-      Mobile - Flappy Bird - Version 12 Sprites_79: -1020844618
       Mobile - Flappy Bird - Version 12 Sprites_2: 1423917605
+      Mobile - Flappy Bird - Version 12 Sprites_79: -1020844618
       Mobile - Flappy Bird - Version 12 Sprites_65: 418325145
       Mobile - Flappy Bird - Version 12 Sprites_18: -1603209192
       Mobile - Flappy Bird - Version 12 Sprites_11: -1883976314
