@@ -7,11 +7,20 @@ namespace Sources.Scripts.GameScene.Bird
     [RequireComponent(typeof(BirdController))]
     public class BirdModel : MonoBehaviour
     {
+        #region Parameters
+        
         [SerializeField] private TMP_Text _counter;
-    
+        [SerializeField] private TMP_Text _endCounter;
+        [SerializeField] private GameObject _deathMenu;
+        
         private BirdController _birdController;
         private int _score;
     
+        #endregion
+
+        #region Methods
+
+        
 
         private void Start()
         {
@@ -33,8 +42,12 @@ namespace Sources.Scripts.GameScene.Bird
         public void Die()
         {
             Debug.Log("Вы умерли");
-            SceneManager.LoadScene(1); 
+            _endCounter.text = _score.ToString();
+            _deathMenu.SetActive(true);
+            Time.timeScale = 0;
             ResetPlayer();
         }
+        
+        #endregion
     }
 }

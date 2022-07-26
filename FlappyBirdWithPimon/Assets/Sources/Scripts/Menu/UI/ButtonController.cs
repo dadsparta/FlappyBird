@@ -15,5 +15,6 @@ namespace Sources.Scripts.menu.UI
         {
             Application.Quit();
         }
+        
     }
 }
