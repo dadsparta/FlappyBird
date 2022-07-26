@@ -14,11 +14,17 @@ namespace Sources.Scripts.GameScene.DataBase
             if (ScoreRecordDatabase.Score > ScoreRecordDatabase.ScoreRecord)
             {
                 ScoreRecordDatabase.ScoreRecord = ScoreRecordDatabase.Score;
+                PlayerPrefs.SetInt("_recordScore",ScoreRecordDatabase.ScoreRecord);
+                PlayerPrefs.Save();
             }
         }
 
         public void ShowMaxRecord()
         {
+            if (PlayerPrefs.HasKey("_recordScore"))
+            {
+                ScoreRecordDatabase.ScoreRecord = PlayerPrefs.GetInt("_recordScore");
+            }
             _recordText.text = "Ваш рекорд: " + ScoreRecordDatabase.ScoreRecord;
         }
     }
