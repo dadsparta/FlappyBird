@@ -14,7 +14,23 @@ namespace Sources.Scripts.GameScene.DataBase
             if (ScoreRecordDatabase.Score > ScoreRecordDatabase.ScoreRecord)
             {
                 ScoreRecordDatabase.ScoreRecord = ScoreRecordDatabase.Score;
-                PlayerPrefs.SetInt("_recordScore",ScoreRecordDatabase.ScoreRecord);
+                if (PlayerPrefs.HasKey("_recordScore"))
+                {
+                    if (ScoreRecordDatabase.ScoreRecord > PlayerPrefs.GetInt("_recordScore"))
+                    {
+                        PlayerPrefs.SetInt("_recordScore",ScoreRecordDatabase.ScoreRecord);
+                    }
+                    else
+                    {
+                        ScoreRecordDatabase.ScoreRecord = PlayerPrefs.GetInt("_recordScore");
+                    }
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("_recordScore",ScoreRecordDatabase.ScoreRecord);
+                }
+
+                
                 PlayerPrefs.Save();
             }
         }
