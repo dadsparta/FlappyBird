@@ -9,7 +9,6 @@ namespace Sources.Scripts.UI
     {
         [SerializeField] private GameObject _pauseButton;
         [SerializeField] private GameObject _pauseMenu;
-        [SerializeField] private GameObject _deathMenu;
 
 
 
