@@ -12,7 +12,14 @@ namespace Sources.Scripts.AudioScripts
         private void Start()
         {
             _audioSource = GetComponent<AudioSource>();
-            _audioSource.volume = AudioVolumeDatabase.AudioVolume;
+            if (!PlayerPrefs.HasKey("Volume"))
+            {
+                _audioSource.volume = AudioVolumeDatabase.AudioVolume;
+            }
+            else
+            {
+                _audioSource.volume = PlayerPrefs.GetFloat("Volume");
+            }
         }
 
         private void Update()
