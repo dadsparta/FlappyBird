@@ -18,6 +18,7 @@ public class BirdController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private Quaternion _minQuaternion;
     private Quaternion _maxQuaternion;
+    private AudioSource _jumpSound;
     #endregion
 
     #region Methods
@@ -26,6 +27,7 @@ public class BirdController : MonoBehaviour
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _jumpSound = GetComponent<AudioSource>();
         _startPosition = transform.position;
         _minQuaternion = Quaternion.Euler(0, 0, _minQuaretionZ);
         _maxQuaternion = Quaternion.Euler(0,0, _maxQuaretionZ);
@@ -38,6 +40,7 @@ public class BirdController : MonoBehaviour
     {
         if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
         {
+            _jumpSound.Play();
             _rigidbody2D.velocity = new Vector2(_speed,0);
             transform.rotation = _maxQuaternion;
             _rigidbody2D.AddForce(Vector2.up * _JumpForce , ForceMode2D.Impulse);

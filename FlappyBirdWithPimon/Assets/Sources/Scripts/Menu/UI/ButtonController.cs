@@ -24,7 +24,7 @@ namespace Sources.Scripts.menu.UI
             Application.Quit();
         }
         
-        public void Options()
+        public void OpenOptions()
         {
             _menuController.OptionsSetActive();
         }
@@ -32,6 +32,11 @@ namespace Sources.Scripts.menu.UI
         public void ReturnToMainMenu()
         {
             _menuController.ReturnToMainMenu();
+        }
+        
+        public void OpenShop()
+        {
+            
         }   
 
     }
