@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Sources.Scripts.GameScene.Bird;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BirdModel))]
 public class BirdCollisionController : MonoBehaviour
 {
-    private BirdModel _birdModel;
+    [SerializeField] private UnityEvent _crashToWall;
 
+    private BirdModel _birdModel;
     private void Start()
     {
         _birdModel = GetComponent<BirdModel>();
@@ -28,6 +30,7 @@ public class BirdCollisionController : MonoBehaviour
         }
         else
         {
+            _crashToWall?.Invoke();
             _birdModel.Die();
         }
     }
