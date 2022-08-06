@@ -27,14 +27,10 @@ namespace Sources.Scripts.GameScene.Bird
 
         private void Start()
         {
-            CameraController cameraController = new CameraController();
-            cameraController._bird = gameObject;
             _counter = GameObject.FindWithTag("Counter").GetComponent<TMP_Text>();
             _deathMenu = GameObject.FindWithTag("DeathMenu");
             _endCounter = GameObject.FindGameObjectWithTag("EndCounter").GetComponent<TMP_Text>();
-            
             _bestScoreGameObject = GameObject.FindGameObjectWithTag("RecordCounter");
-            
             _scoreRecordController = _bestScoreGameObject.GetComponent<ScoreRecordController>();
             _birdController = GetComponent<BirdController>();
             

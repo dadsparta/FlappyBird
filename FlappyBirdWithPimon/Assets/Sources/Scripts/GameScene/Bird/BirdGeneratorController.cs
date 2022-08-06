@@ -10,6 +10,15 @@ public class BirdGeneratorController : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(_bird[0],_playerPos.position,Quaternion.identity);
+        if (PlayerPrefs.HasKey("PlayerSkin"))
+        {
+            Instantiate(_bird[PlayerPrefs.GetInt("PlayerSkin")],_playerPos.position,Quaternion.identity);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("PlayerSkin",0);
+            Instantiate(_bird[PlayerPrefs.GetInt("PlayerSkin")],_playerPos.position,Quaternion.identity);
+            PlayerPrefs.Save();
+        }
     }
 }

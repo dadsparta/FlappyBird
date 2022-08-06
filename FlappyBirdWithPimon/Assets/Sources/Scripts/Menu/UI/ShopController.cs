@@ -7,6 +7,8 @@ public class ShopController : MonoBehaviour
     [SerializeField] private GameObject _shop;
     [SerializeField] private GameObject _menu;
 
+    [SerializeField] private GameObject[] _skins;
+
     public void OpenMenu()
     {
         _menu.SetActive(false);
@@ -17,5 +19,11 @@ public class ShopController : MonoBehaviour
     {
         _shop.SetActive(false);
         _menu.SetActive(true);
+    }
+
+    public void SetPlayerSkin(int SkinId)
+    {
+        PlayerPrefs.SetInt("PlayerSkin",SkinId);
+        PlayerPrefs.Save();
     }
 }
