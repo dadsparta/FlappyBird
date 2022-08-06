@@ -6,12 +6,12 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private float _xOffSet;
-    private GameObject _bird;
+    [SerializeField] public GameObject _bird;
     
 
     private void Start()
     {
-        _bird = GameObject.FindWithTag("Player");
+        _bird = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()

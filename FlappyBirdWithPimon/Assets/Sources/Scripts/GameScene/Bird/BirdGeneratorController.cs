@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class BirdGeneratorController : MonoBehaviour
 {
-    [SerializeField] private GameObject _bird;
+    [SerializeField] private Transform _playerPos;
+    [SerializeField] private GameObject[] _bird;
 
     private void Start()
     {
-        Instantiate(_bird);
+        Instantiate(_bird[0],_playerPos.position,Quaternion.identity);
     }
 }
