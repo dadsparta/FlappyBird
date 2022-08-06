@@ -1,8 +1,8 @@
 using Sources.Scripts.GameScene.DataBase;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
+
 
 namespace Sources.Scripts.GameScene.Bird
 {
@@ -11,11 +11,11 @@ namespace Sources.Scripts.GameScene.Bird
     {
         #region Parameters
         
-        [SerializeField] private TMP_Text _counter;
-        [SerializeField] private TMP_Text _endCounter;
-        [SerializeField] private GameObject _deathMenu;
-        [SerializeField] private GameObject _BestScoreGameObject;
+        [SerializeField]private GameObject _deathMenu;
+        [SerializeField]private GameObject _bestScoreGameObject;
         
+        private TMP_Text _counter;
+        private TMP_Text _endCounter;
         private ScoreRecordController _scoreRecordController;
         private BirdController _birdController;
 
@@ -27,8 +27,16 @@ namespace Sources.Scripts.GameScene.Bird
 
         private void Start()
         {
-            _scoreRecordController = _BestScoreGameObject.GetComponent<ScoreRecordController>();
-            _birdController = GetComponent<BirdController>();
+            _counter = GameObject.FindWithTag("Counter").GetComponent<TMP_Text>();
+            
+            _deathMenu = GameObject.FindGameObjectWithTag("DeathMenu");
+            
+            _endCounter = GameObject.FindGameObjectWithTag("EndCounter").GetComponent<TMP_Text>();
+            
+            _bestScoreGameObject = GameObject.FindGameObjectWithTag("RecordCounter");
+            
+            _scoreRecordController = _bestScoreGameObject.GetComponent<ScoreRecordController>();
+            _birdController = GetComponent<BirdController>();   
             
         }
 
