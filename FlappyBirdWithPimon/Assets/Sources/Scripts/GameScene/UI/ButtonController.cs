@@ -1,3 +1,6 @@
+using System;
+using Sources.Scripts.GameScene.Bird;
+using Sources.Scripts.GameScene.DataBase;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -10,8 +13,8 @@ namespace Sources.Scripts.UI
         [SerializeField] private GameObject _pauseButton;
         [SerializeField] private GameObject _pauseMenu;
 
-
-
+        private GameObject _bird;
+        
         public void PauseGame()
         {
             Time.timeScale = 0;
@@ -35,6 +38,7 @@ namespace Sources.Scripts.UI
 
         public void ExitToMenu()
         {
+            ScoreRecordDatabase.Score = 0;
             SceneManager.LoadScene(0);
             Time.timeScale = 1;
         }

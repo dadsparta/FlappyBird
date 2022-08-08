@@ -7,8 +7,6 @@ public class ShopController : MonoBehaviour
     [SerializeField] private GameObject _shop;
     [SerializeField] private GameObject _menu;
 
-    [SerializeField] private GameObject[] _skins;
-
     public void OpenMenu()
     {
         _menu.SetActive(false);
