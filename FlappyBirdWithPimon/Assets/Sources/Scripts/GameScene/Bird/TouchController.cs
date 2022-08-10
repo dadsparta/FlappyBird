@@ -44,6 +44,7 @@ public class TouchController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("clicked");
         Jump();
     }
 
