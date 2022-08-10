@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace Sources.Scripts.GameScene.Bird
 {
-    [RequireComponent(typeof(BirdController))]
     public class BirdModel : MonoBehaviour
     {
         #region Parameters
@@ -17,7 +16,7 @@ namespace Sources.Scripts.GameScene.Bird
         private TMP_Text _counter;
         private TMP_Text _endCounter;
         private ScoreRecordController _scoreRecordController;
-        private BirdController _birdController;
+        private TouchController _touchController;
 
         #endregion
 
@@ -32,7 +31,7 @@ namespace Sources.Scripts.GameScene.Bird
             _endCounter = GameObject.FindGameObjectWithTag("EndCounter").GetComponent<TMP_Text>();
             _bestScoreGameObject = GameObject.FindGameObjectWithTag("RecordCounter");
             _scoreRecordController = _bestScoreGameObject.GetComponent<ScoreRecordController>();
-            _birdController = GetComponent<BirdController>();
+            _touchController = GetComponent<TouchController>();
             
             _deathMenu.SetActive(false);
 
@@ -44,10 +43,9 @@ namespace Sources.Scripts.GameScene.Bird
             _counter.text = ScoreRecordDatabase.Score.ToString();
         }
 
-        private void ResetPlayer()
+        private void ResetScore()
         {
             ScoreRecordDatabase.Score = 0;
-            _birdController.ResetBird();
         }
 
         public void Die()
@@ -58,7 +56,7 @@ namespace Sources.Scripts.GameScene.Bird
             _scoreRecordController.ShowMaxRecord();
             _deathMenu.SetActive(true);
             Time.timeScale = 0;
-            ResetPlayer();
+            ResetScore();
         }
         
         #endregion

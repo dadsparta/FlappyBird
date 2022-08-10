@@ -12,6 +12,7 @@ namespace Sources.Scripts.UI
     {
         [SerializeField] private GameObject _pauseButton;
         [SerializeField] private GameObject _pauseMenu;
+        [SerializeField] private GameObject _touchPanel;
 
         private GameObject _bird;
         
@@ -20,6 +21,7 @@ namespace Sources.Scripts.UI
             Time.timeScale = 0;
             _pauseButton.SetActive(false);
             _pauseMenu.SetActive(true);
+            _touchPanel.SetActive(false);
 
         }
 
@@ -28,6 +30,7 @@ namespace Sources.Scripts.UI
             Time.timeScale = 1;
             _pauseButton.SetActive(true);
             _pauseMenu.SetActive(false);
+            _touchPanel.SetActive(true);
         }
 
         public void RestartGame()
