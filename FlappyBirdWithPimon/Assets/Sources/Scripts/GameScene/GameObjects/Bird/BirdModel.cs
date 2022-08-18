@@ -47,7 +47,6 @@ namespace Sources.Scripts.GameScene.Bird
 
         public void Die()
         {
-            Debug.Log("Вы умерли");
             _endCounter.text = ScoreRecordDatabase.Score.ToString();
             _scoreRecordController.UpdateMaxRecord();
             _scoreRecordController.ShowMaxRecord();

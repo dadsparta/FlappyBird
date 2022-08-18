@@ -1,4 +1,5 @@
 using System;
+using Sources.Scripts.GameScene.DataBase;
 using Sources.Scripts.Menu.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,7 +38,20 @@ namespace Sources.Scripts.menu.UI
         public void OpenShop()
         {
             
-        }   
+        }
+
+        private void PlayerPrefsSaver()
+        {
+            if (PlayerPrefs.HasKey("_recordScore"))
+            {
+                ScoreRecordDatabase.ScoreRecord = PlayerPrefs.GetInt("_recordScore");
+            }
+
+            if (PlayerPrefs.HasKey("CoinCount"))
+            {
+                CoinDataBase.CoinCount = PlayerPrefs.GetInt("CoinCount");
+            }
+        }
 
     }
 }

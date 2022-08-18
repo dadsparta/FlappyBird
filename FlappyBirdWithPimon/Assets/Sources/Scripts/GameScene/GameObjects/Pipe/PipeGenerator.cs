@@ -39,13 +39,13 @@ public class PipeGenerator : PipeController
             {   
                 if (TryGetObject(out GameObject pipe))
                 {
+                    yield return null;
                     _elapsedTime = 0;
                     float spawnPointY = Random.Range(_minSpawnPositionY, _maxSpawnPositionY);
                     Vector3 spawnPoint = new Vector3(transform.position.x, spawnPointY, transform.position.z);
                     pipe.SetActive(true);
                     pipe.transform.position = spawnPoint;
                     DisableObjectsAbroadScreen();
-                    yield return null;
                 }
             }
     }
