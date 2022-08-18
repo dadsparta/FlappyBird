@@ -21,9 +21,7 @@ namespace Sources.Scripts.GameScene.Bird
         #endregion
 
         #region Methods
-
         
-
         private void Start()
         {
             _counter = GameObject.FindWithTag("Counter").GetComponent<TMP_Text>();
@@ -34,7 +32,6 @@ namespace Sources.Scripts.GameScene.Bird
             _touchController = GetComponent<TouchController>();
             
             _deathMenu.SetActive(false);
-
         }
 
         public void IncreaseScore()

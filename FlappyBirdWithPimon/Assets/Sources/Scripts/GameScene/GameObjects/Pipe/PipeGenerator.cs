@@ -30,14 +30,13 @@ public class PipeGenerator : PipeController
     {
         StartCoroutine(SpawnOfPipes());
     }
-
-
+    
     IEnumerator SpawnOfPipes()
     {
         _elapsedTime += Time.deltaTime;
 
             if (_elapsedTime > _secondBetweenSpawn)
-            {
+            {   
                 if (TryGetObject(out GameObject pipe))
                 {
                     _elapsedTime = 0;
@@ -45,7 +44,6 @@ public class PipeGenerator : PipeController
                     Vector3 spawnPoint = new Vector3(transform.position.x, spawnPointY, transform.position.z);
                     pipe.SetActive(true);
                     pipe.transform.position = spawnPoint;
-                    DisablePoolNear();
                     DisableObjectsAbroadScreen();
                     yield return null;
                 }

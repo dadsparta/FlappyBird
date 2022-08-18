@@ -1,21 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinController : MonoBehaviour
+namespace Sources.Scripts.GameScene.GameObjects.Coins
 {
-    public void CoinGenerator()
+    public class CoinController : MonoBehaviour
     {
-        CoinDataBase.CoinSpawnerController++; 
-        if (CoinDataBase.CoinSpawnerController == 3) 
-        { 
-            gameObject.SetActive(true); 
-            CoinDataBase.CoinSpawnerController = 0;
-        }
-        else 
-        { 
-            gameObject.SetActive(false);
-        }
-    }
 
+        [SerializeField] private GameObject _coin;
+
+        private void Start()
+        {
+            _coin.SetActive(false);
+        
+            CoinGenerator();
+        }
+
+        public void CoinGenerator()
+        {
+            CoinDataBase.CoinSpawnerController++; 
+            if (CoinDataBase.CoinSpawnerController == 3) 
+            { 
+                _coin.SetActive(true); 
+                CoinDataBase.CoinSpawnerController = 0;
+            }
+            else 
+            { 
+                _coin.SetActive(false);
+            }
+        }
+
+    }
 }

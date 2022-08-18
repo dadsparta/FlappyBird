@@ -29,17 +29,17 @@ public class PipeController : MonoBehaviour
         for (int i = 0; i < _capacity; i++)
         {
             GameObject spawned = Instantiate(prefab, _container.transform);
-            spawned.SetActive(false);
+            spawned.SetActive(false);  
                 
             _pool.Add(spawned);
         }
     }
 
-    protected bool TryGetObject(out GameObject result)
-    {
-        result = _pool.FirstOrDefault(p => p.activeSelf == false);
-        return result != null;
-    }
+        protected bool TryGetObject(out GameObject result)
+        {
+            result = _pool.FirstOrDefault(p => p.activeSelf == false);
+            return result != null;
+        }
 
     protected void DisableObjectsAbroadScreen()
     {
@@ -47,7 +47,7 @@ public class PipeController : MonoBehaviour
         
         foreach (var item in _pool)
         {
-            if (item.activeSelf == true)
+            if (item.activeSelf)
             {
                 if (item.transform.position.x < disablePoint.x)
                 {
@@ -56,22 +56,7 @@ public class PipeController : MonoBehaviour
             }
         }
     }
-
-    protected void DisablePoolNear()
-    {
-        for (int i = 0; i < _pool.Count; i++)
-        {
-            for (int j = 0; j < _pool.Count; j++)
-            {
-                if (i!=j)
-                {
-                    if (_pool[i].transform.position.x == _pool[j].transform.position.x)
-                        _pool[j].IsDestroyed();
-                }
-            }
-        }
-    }
-
+    
     public void ResetPool()
     {
         foreach (var item in _pool)

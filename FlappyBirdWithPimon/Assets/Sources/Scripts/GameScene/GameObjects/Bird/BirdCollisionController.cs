@@ -24,9 +24,8 @@ public class BirdCollisionController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "roof")
+        if (col.gameObject.tag == "Roof")
         {
-            
         }
         else
         {
