@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -16,6 +17,12 @@ namespace Sources.Scripts.GameScene.GameObjects.Coins
                 instance = this;
             }
         }
+
+        private void Start()
+        {
+            _counterOfCoins.text = ":" + CoinDataBase.CoinCount;
+        }
+
 
         public void UpdateCoinCount()
         {

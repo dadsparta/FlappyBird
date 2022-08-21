@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -18,6 +19,7 @@ namespace Sources.Scripts.GameScene.GameObjects.Coins
         
             CoinGenerator();
         }
+        
 
         public void CoinGenerator()
         {
@@ -26,11 +28,11 @@ namespace Sources.Scripts.GameScene.GameObjects.Coins
             { 
                 _coin.SetActive(true); 
                 CoinDataBase.CoinSpawnerController = 0;
+                _nextCoinSpawn = Random.Range(1,5);
             }
             else 
             { 
                 _coin.SetActive(false);
-                _nextCoinSpawn = Random.Range(1,5);
             }
         }
 
