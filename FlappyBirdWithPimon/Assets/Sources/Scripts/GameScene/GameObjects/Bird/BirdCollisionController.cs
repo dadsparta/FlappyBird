@@ -20,7 +20,7 @@ public class BirdCollisionController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.TryGetComponent(out ScoreZone scoreZone))
-            _birdModel.IncreaseScore();
+            _birdModel.IncreaseScore(); 
     }
 
     private void OnCollisionEnter2D(Collision2D col)

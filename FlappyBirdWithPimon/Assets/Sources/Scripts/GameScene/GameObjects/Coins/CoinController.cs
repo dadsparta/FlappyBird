@@ -1,22 +1,19 @@
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
 namespace Sources.Scripts.GameScene.GameObjects.Coins
 {
     public class CoinController : MonoBehaviour
     {
+        public static CoinController CoinControl;
 
         [SerializeField] private GameObject _coin;
 
         private CoinShowController _coinShowController;
-
-        private int _nextCoinSpawn = 3;
-
         private void Start()
         {
+            CoinDataBase.NextCoinSpawn = 3;
             _coin.SetActive(false);
-        
             CoinGenerator();
         }
         
@@ -24,15 +21,11 @@ namespace Sources.Scripts.GameScene.GameObjects.Coins
         public void CoinGenerator()
         {
             CoinDataBase.CoinSpawnerController++; 
-            if (CoinDataBase.CoinSpawnerController == _nextCoinSpawn) 
+            if (CoinDataBase.CoinSpawnerController == CoinDataBase.NextCoinSpawn) 
             { 
                 _coin.SetActive(true); 
                 CoinDataBase.CoinSpawnerController = 0;
-                _nextCoinSpawn = Random.Range(1,5);
-            }
-            else 
-            { 
-                _coin.SetActive(false);
+                CoinDataBase.NextCoinSpawn = Random.Range(1,5);
             }
         }
 
